@@ -1,0 +1,8 @@
+<machine>
+	<device type = 'RAM' name = 'Main RAM'>
+		<map start = '0000' length = '2000' />
+	</device>
+	<device type = 'ROM' name = 'Main ROM'>
+		<map start = '2000' length = 'E000' />
+	</device>
+</machine>

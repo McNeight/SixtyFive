@@ -1,0 +1,12 @@
+<!ELEMENT machine (device*,file*)>
+<!ELEMENT device (map+)>
+	<!ATTLIST device type CDATA #REQUIRED>
+	<!ATTLIST device name CDATA #REQUIRED>
+<!ELEMENT map EMPTY>
+	<!ATTLIST map start CDATA #REQUIRED>
+	<!ATTLIST map length CDATA #REQUIRED>	
+<!ELEMENT file (#PCDATA)>
+	<!ATTLIST file type CDATA #REQUIRED>
+	<!ATTLIST file start CDATA>
+	
+
