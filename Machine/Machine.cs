@@ -19,7 +19,7 @@ using System.Drawing;
 using System.IO;
 using System.Collections;
 
-namespace sim6502
+namespace SixtyFive
 {
 	public class Machine 
 	{	

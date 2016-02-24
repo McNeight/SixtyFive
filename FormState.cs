@@ -15,7 +15,7 @@ using System;
 using Microsoft.Win32;
 using System.Drawing;
 
-namespace sim6502
+namespace SixtyFive
 {
 
 	public class FormState

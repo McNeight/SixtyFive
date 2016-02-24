@@ -16,7 +16,7 @@
 using System;
 using System.IO;
 
-namespace sim6502
+namespace SixtyFive
 {
 	public enum FileType : int {BinaryRAW,BinaryORG,RAS,Srecord,TEKHex}
 

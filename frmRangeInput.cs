@@ -18,7 +18,7 @@ using System.Collections;
 using System.ComponentModel;
 using System.Windows.Forms;
 
-namespace sim6502
+namespace SixtyFive
 {
 	public enum RangeInputType {OneAddress,TwoAddress,TwoAddressData}
 

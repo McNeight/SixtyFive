@@ -4,7 +4,7 @@
  * the Free Software Foundation; either version 2 of the License, or
  * at your option) any later version. See license.txt for full details.
  * * */using System;using System.Collections;
-namespace sim6502 {
+namespace SixtyFive {
 public class AddressRange {
 	public ushort startAddress;
 	public ushort endAddress;

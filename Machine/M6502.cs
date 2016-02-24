@@ -5,7 +5,7 @@
  * the Free Software Foundation; either version 2 of the License, or
  * at your option) any later version. See license.txt for full details.
  * *  */using System;using System.Text;using System.Collections;
-namespace sim6502 {
+namespace SixtyFive {
 public sealed class M6502 {	private AddressSpace Mem;	private Machine machine;	private int instruction_count;
 	private delegate void OpcodeHandler();	private OpcodeHandler[] Opcodes = new OpcodeHandler[256];
 	// There is jamming behavior to be implemented

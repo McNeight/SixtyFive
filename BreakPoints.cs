@@ -15,7 +15,7 @@
 using System;
 using System.Collections;
 
-namespace sim6502
+namespace SixtyFive
 {
 	[Serializable] public class DataBreak
 	{

@@ -16,7 +16,7 @@ using System;
 using System.Xml;
 using System.Windows.Forms;
 
-namespace sim6502
+namespace SixtyFive
 {
 	public class MachineBuilder
 	{

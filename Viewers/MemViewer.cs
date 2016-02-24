@@ -12,7 +12,7 @@ using System.Collections;
 using System.ComponentModel;
 using System.Windows.Forms;
 
-namespace sim6502
+namespace SixtyFive
 {
 	// Memory viewer form
 	public class MemViewer : System.Windows.Forms.Form

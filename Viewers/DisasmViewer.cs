@@ -13,7 +13,7 @@ using System.ComponentModel;
 using System.Windows.Forms;
 using System.Data;
 
-namespace sim6502
+namespace SixtyFive
 {
 
 	public class DisasmViewer : System.Windows.Forms.Form

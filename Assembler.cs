@@ -18,7 +18,7 @@ using System.Collections;
 using System.IO;
 using System.Text.RegularExpressions;
 
-namespace sim6502
+namespace SixtyFive
 {
 	public class Assembler
 	{

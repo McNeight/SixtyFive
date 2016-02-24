@@ -13,7 +13,7 @@ using System.ComponentModel;
 using System.Windows.Forms;
 using System.Text;
 
-namespace sim6502
+namespace SixtyFive
 {
 
 	public class CPUViewer : System.Windows.Forms.Form

@@ -16,7 +16,7 @@
 using System;
 using System.Text;
 
-namespace sim6502 {
+namespace SixtyFive {
 
 public class M6502DASM {
 	private AddressSpace Mem;

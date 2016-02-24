@@ -14,7 +14,7 @@
 
 using System;
 
-namespace sim6502 {
+namespace SixtyFive {
 
 	public interface IDevice 
 	{

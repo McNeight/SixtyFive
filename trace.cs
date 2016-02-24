@@ -10,7 +10,7 @@
 using System;
 using System.IO;
 
-namespace sim6502
+namespace SixtyFive
 {
 	public class Trace
 	{

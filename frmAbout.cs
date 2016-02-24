@@ -4,12 +4,12 @@ using System.Collections;
 using System.ComponentModel;
 using System.Windows.Forms;
 
-namespace sim6502
+namespace SixtyFive
 {
 	/// <summary>
 	/// Summary description for About.
 	/// </summary>
-	public class About : System.Windows.Forms.Form
+	public class frmAbout : System.Windows.Forms.Form
 	{
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label label3;
@@ -22,7 +22,7 @@ namespace sim6502
 		/// </summary>
 		private System.ComponentModel.Container components = null;
 
-		public About()
+		public frmAbout()
 		{
 			//
 			// Required for Windows Form Designer support

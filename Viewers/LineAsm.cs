@@ -13,7 +13,7 @@ using System.ComponentModel;
 using System.Windows.Forms;
 using System.Data;
 
-namespace sim6502
+namespace SixtyFive
 {
 
 	public class LineAsm : System.Windows.Forms.Form

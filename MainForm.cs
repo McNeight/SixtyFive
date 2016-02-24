@@ -1,10 +1,17 @@
-/* * MainForm.cs * * Sim6502 Main Form * 
- * Copyright (c) 2004 Dan Boris * *
+/*
+ * MainForm.cs
+ *
+ * Sim6502 Main Form
+ * 
+ * Copyright (c) 2004 Dan Boris
+ *
+ *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * at your option) any later version. See license.txt for full details.
- * */
+ *
+ */
 
 using System;
 using System.Drawing;
@@ -14,7 +21,7 @@ using System.Windows.Forms;
 using System.Data;
 using Microsoft.Win32;
 
-namespace sim6502
+namespace SixtyFive
 {
 	// Main MDI form
 	public class MainForm : System.Windows.Forms.Form
@@ -930,7 +937,7 @@ private void miSpeed_Select(object sender, System.EventArgs e)
 
 		private void miAbout_Click(object sender, System.EventArgs e)
 		{
-			About abt = new About();
+			frmAbout abt = new frmAbout();
 			abt.ShowDialog();
 		}
 
