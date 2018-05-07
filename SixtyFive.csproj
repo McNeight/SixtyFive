@@ -106,10 +106,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Devices\AddressRange.cs" />
     <Compile Include="frmAbout.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Assembler.cs">
+    <Compile Include="IO\Assembler.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -124,7 +125,7 @@
     <Compile Include="Devices\Memory.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="filereader.cs">
+    <Compile Include="IO\FileReader.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="FormState.cs">
@@ -154,7 +155,7 @@
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="trace.cs">
+    <Compile Include="IO\Trace.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Viewers\CPUViewer.cs">
