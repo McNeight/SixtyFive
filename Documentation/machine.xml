@@ -1,8 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE machine SYSTEM "machine.DTD">
 <machine>
-	<device type = 'RAM' name = 'Main RAM'>
-		<map start = '0000' length = '2000' />
-	</device>
-	<device type = 'ROM' name = 'Main ROM'>
-		<map start = '2000' length = 'E000' />
-	</device>
+   <device type = 'RAM' name = 'Main RAM'>
+      <map start = '0000' length = '2000' />
+   </device>
+   <device type = 'ROM' name = 'Apple 1 ROM'>
+      <map start = 'E000' length = '1000' />
+   </device>
+   <file type = 'ROM' start = 'E000'>apple1basic.bin</file>
 </machine>

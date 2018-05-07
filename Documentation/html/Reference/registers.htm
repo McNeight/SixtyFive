@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Processor Status Register</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body>
+<h2>Processor Status Register</h2>
+<table width="40%" border="1">
+  <tr> 
+    <td>Bit </td>
+    <td>7</td>
+    <td>6</td>
+    <td>5</td>
+    <td>4 </td>
+    <td>3</td>
+    <td>2 </td>
+    <td>1</td>
+    <td>0</td>
+  </tr>
+  <tr> 
+    <td>Flag</td>
+    <td>N</td>
+    <td>V</td>
+    <td>&nbsp;</td>
+    <td>B</td>
+    <td>D</td>
+    <td>I</td>
+    <td>Z</td>
+    <td>C</td>
+  </tr>
+</table>
+<p><br>
+  <br>
+  N = NEGATIVE. Reflects the state of bit 7 after an operation. Used to indicate 
+  negative values.<br>
+  <br>
+  V = OVERFLOW. The overflow flag is set during arithmetic operations if the result 
+  has yielded an invalid 2's complement result (e.g. adding to positive numbers 
+  and ending up with a negative result: 64 + 64 =&gt; -128). It is determined 
+  by looking at the carry between bits 6 and 7 and between bit 7 and the carry 
+  flag.<br>
+  <br>
+  B = BRK COMMAND. Set to 1 if an IRQ is caused by a BRK, reset to 0 if caused 
+  by an external IRQ.<br>
+  <br>
+  D = DECIMAL MODE. Set to 1 to enable decimal math mode..<br>
+  <br>
+  I = IRQ DISABLE. Set to 1 to disable IRQ interrupt.<br>
+  <br>
+  Z = ZERO. Set to 1 if the result of the last operation was zero.<br>
+  <br>
+  C = CARRY. Set if an add produced a value larger then 255, or if the subtraction<br>
+  produced a borrow. Also used during logical shifts.<br>
+  <br>
+</p>
+</body>
+</html>

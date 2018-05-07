@@ -1,0 +1,112 @@
+<html>
+<head>
+<title>Addressing Modes</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body>
+<h2>Addressing Modes </h2>
+<p>Addressing modes controls what data an instruction operates on. </p>
+<p>&nbsp;</p>
+<h3>Implied </h3>
+<p>Bytes: 1</p>
+<p>Example: TXS</p>
+<p>This address mode requires no special addressing information. The source and 
+  destination of the data are implied by the instruction.</p>
+<p>&nbsp;</p>
+<h3>Accumulator</h3>
+<p>Bytes: 1</p>
+<p>Example: ASL A</p>
+<p>The instruction operates directly on the accumulator.</p>
+<p>&nbsp;</p>
+<h3>Immediate</h3>
+<p>Bytes: 2</p>
+<p>Example: LDA #$55</p>
+<p>This instructions operates on an 8-bit numeric value. The example above would 
+  load the hex value $55 into the accumulator.</p>
+<p>&nbsp;</p>
+<h3>Zero Page</h3>
+<p>Bytes: 2</p>
+<p>Example: STA $20</p>
+<p>The instruction operates on one of the first 256 bytes of memory (the zero 
+  page). The instruction above will store the contents of the accumulator at address 
+  $20.</p>
+<p>&nbsp;</p>
+<h3>Zero Page, X</h3>
+<p>Bytes: 2</p>
+<p>Example: STA $20,X</p>
+<p>This instruction operates on an address in the first 256 bytes of memory, indexed 
+  by the X register. In the example if X contains $8 the instruction above will 
+  store the contents of the accumulator at address $28 ($20 + $8). Note that the 
+  final address will not be greater the $FF, if it is, it wraps around. For example. 
+  $80 + $FF = $7F and not $17F.</p>
+<p>&nbsp;</p>
+<h3>Zero Page, Y</h3>
+<p>Bytes: 2</p>
+<p>Example: STX $20,Y</p>
+<p>This instruction operates on an address in the first 256 bytes of memory, indexed 
+  by the Y register. In the example if Y contains $8 the instruction above will 
+  store the contents of the accumulator at address $28 ($20 + $8). Note that the 
+  final address will not be greater the $FF, if it is, it wraps around. For example. 
+  $80 + $FF = $7F and not $17F.</p>
+<p>&nbsp;</p>
+<h3>Absolute</h3>
+<p>Bytes: 3</p>
+<p>Example: LDA $2000</p>
+<p>The instructions operated on the address in the operand. In the example the 
+  vlaue at address $2000 will be loaded into the accumulator.</p>
+<p>&nbsp;</p>
+<h3>Absolute,X</h3>
+<p>Bytes: 3</p>
+<p>Example: STA $2000,X</p>
+<p>The instructions operated on the address in the operand plus the contents of 
+  the X register. In the example if X contains $20, the the accumulator will be 
+  stored at address $2020 ($2000 + $20). Not that if the final address is greater 
+  the $FFFF then it will wrap around. For example $FFF0 + $20 = $0010.</p>
+<p>&nbsp;</p>
+<h3>Absolute,Y</h3>
+<p>Bytes: 3</p>
+<p>Example: STA $2000,Y</p>
+<p>The instructions operated on the address in the operand plus the contents of 
+  the Y register. In the example if Y contains $20, the the accumulator will be 
+  stored at address $2020 ($2000 + $20). Not that if the final address is greater 
+  the $FFFF then it will wrap around. For example $FFF0 + $20 = $0010.</p>
+<p>&nbsp;</p>
+<h3>Indirect</h3>
+<p>Bytes: 3</p>
+<p>Example: JMP ($2000)</p>
+<p>This mode is only used by the JMP instruction. The jump will happen to the 
+  address stored in the address in the operand. In the example above, the jump 
+  will happen to the address that is stored at $2000/$2001 is LSB/MSB format.</p>
+<p>&nbsp;</p>
+<h3>Indexed Indirect</h3>
+<p>Bytes: 2</p>
+<p>Example: LDA ($40,X) </p>
+<p>To get the address this instruction operates on, X is added to the operand 
+  value (which must be between $00 and $FF), the resulting address contains the 
+  LSB of the final address. In the example, if X contains $8, and $48 contains 
+  $55 and $49 contains $40, then the final address will be $4955 (address stored 
+  at $40 + $8).</p>
+<p>&nbsp;</p>
+<h3>Indirect Indexed</h3>
+<p>Bytes: 2</p>
+<p>Example: LDA ($40),Y</p>
+<p>To get the address this instruction operates on, Y is added to the address 
+  stored at the operand value (which must be between $00 and $FF). In the example, 
+  if Y contains $8, $40 contains $00 and $41 contains $40, then the final address 
+  will be $4008 (address at $40) + $8.</p>
+<h3>&nbsp;</h3>
+<h3>Relative</h3>
+<p>Bytes: 2</p>
+<p>Relative addressing is used for branch instructions. The operand value is an 
+  8-bit signed offset for the current program counter position. If the branch 
+  is successful the operand will be added to the program counter (which at this 
+  point will be at the start of the next instruction) to create the new address. 
+  When writing branch instructions for an assembler the operand contains the address 
+  you want to branch to, and the assembler converts it to the appropriate offest 
+  if possible.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>
