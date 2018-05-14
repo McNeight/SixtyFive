@@ -4,6 +4,7 @@
  * Defines interface for devices accessable via the AddressSpace class.
  *
  * Copyright (c) 2003 Mike Murphy
+ * Copyright © 2018 Neil McNeight
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -14,20 +15,42 @@
 
 using System;
 
-namespace SixtyFive {
+namespace SixtyFive
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public interface IDevice
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        void Reset();
 
-	public interface IDevice 
-	{
-		void Reset();
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="addr"></param>
+        /// <returns></returns>
+        Byte this[UInt16 addr]
+        {
+            get;
+            set;
+        }
 
-		byte this[ushort addr] 
-		{
-			get;
-			set;
-		}
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="addr"></param>
+        /// <param name="data"></param>
+        void DebugWrite(UInt16 addr, Byte data);
 
-		void DebugWrite(ushort addr, byte data);		byte DebugRead(ushort addr);
-		
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="addr"></param>
+        /// <returns></returns>
+        Byte DebugRead(UInt16 addr);
 
-	}
+    }
 }

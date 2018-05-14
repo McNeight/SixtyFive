@@ -1,10 +1,17 @@
-/* * DisasmViewer.cs * * Sim6502 Disassembly Viewer Form * 
- * Copyright (c) 2004 Dan Boris * *
+/*
+ * DisasmViewer.cs
+ *
+ * Sim6502 Disassembly Viewer Form
+ * 
+ * Copyright (c) 2004 Dan Boris
+ *
+ *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * at your option) any later version. See license.txt for full details.
- * */
+ *
+ */
 
 using System;
 using System.Drawing;
@@ -39,45 +46,48 @@ namespace SixtyFive
 
 		private void InitializeComponent()
 		{
-			this.pbMem = new System.Windows.Forms.PictureBox();
-			this.vsAddress = new System.Windows.Forms.VScrollBar();
-			this.SuspendLayout();
-			// 
-			// pbMem
-			// 
-			this.pbMem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-				| System.Windows.Forms.AnchorStyles.Left)));
-			this.pbMem.Location = new System.Drawing.Point(0, 0);
-			this.pbMem.Name = "pbMem";
-			this.pbMem.Size = new System.Drawing.Size(376, 400);
-			this.pbMem.TabIndex = 0;
-			this.pbMem.TabStop = false;
-			this.pbMem.Paint += new System.Windows.Forms.PaintEventHandler(this.pbMem_Paint);
-			// 
-			// vsAddress
-			// 
-			this.vsAddress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-				| System.Windows.Forms.AnchorStyles.Left)));
-			this.vsAddress.LargeChange = 16;
-			this.vsAddress.Location = new System.Drawing.Point(376, 0);
-			this.vsAddress.Maximum = 65535;
-			this.vsAddress.Name = "vsAddress";
-			this.vsAddress.Size = new System.Drawing.Size(16, 400);
-			this.vsAddress.TabIndex = 1;
-			this.vsAddress.ValueChanged += new System.EventHandler(this.vsAddress_ValueChanged);
-			// 
-			// DisasmViewer
-			// 
-			this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-			this.ClientSize = new System.Drawing.Size(392, 398);
-			this.Controls.Add(this.vsAddress);
-			this.Controls.Add(this.pbMem);
-			this.Name = "DisasmViewer";
-			this.Text = "Disassembly Viewer";
-			this.Resize += new System.EventHandler(this.DisasmViewer_Resize);
-			this.Closing += new System.ComponentModel.CancelEventHandler(this.DisasmViewer_Closing);
-			this.Load += new System.EventHandler(this.DisasmViewer_Load);
-			this.ResumeLayout(false);
+         this.pbMem = new System.Windows.Forms.PictureBox();
+         this.vsAddress = new System.Windows.Forms.VScrollBar();
+         ((System.ComponentModel.ISupportInitialize)(this.pbMem)).BeginInit();
+         this.SuspendLayout();
+         // 
+         // pbMem
+         // 
+         this.pbMem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+         this.pbMem.Location = new System.Drawing.Point(0, 0);
+         this.pbMem.Name = "pbMem";
+         this.pbMem.Size = new System.Drawing.Size(376, 400);
+         this.pbMem.TabIndex = 0;
+         this.pbMem.TabStop = false;
+         this.pbMem.Paint += new System.Windows.Forms.PaintEventHandler(this.pbMem_Paint);
+         // 
+         // vsAddress
+         // 
+         this.vsAddress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+         this.vsAddress.LargeChange = 16;
+         this.vsAddress.Location = new System.Drawing.Point(376, 0);
+         this.vsAddress.Maximum = 65535;
+         this.vsAddress.Name = "vsAddress";
+         this.vsAddress.Size = new System.Drawing.Size(16, 400);
+         this.vsAddress.TabIndex = 1;
+         this.vsAddress.ValueChanged += new System.EventHandler(this.vsAddress_ValueChanged);
+         // 
+         // DisasmViewer
+         // 
+         this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
+         this.ClientSize = new System.Drawing.Size(392, 398);
+         this.Controls.Add(this.vsAddress);
+         this.Controls.Add(this.pbMem);
+         this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+         this.Name = "DisasmViewer";
+         this.Text = "Disassembly Viewer";
+         this.Closing += new System.ComponentModel.CancelEventHandler(this.DisasmViewer_Closing);
+         this.Load += new System.EventHandler(this.DisasmViewer_Load);
+         this.Resize += new System.EventHandler(this.DisasmViewer_Resize);
+         ((System.ComponentModel.ISupportInitialize)(this.pbMem)).EndInit();
+         this.ResumeLayout(false);
 
 		}
 		#endregion
@@ -87,8 +97,8 @@ namespace SixtyFive
 		public M6502 CPU;	
 		private M6502DASM dasm;
 
-		public ushort startAddress;
-		public ushort endAddress;
+		public UInt16 startAddress;
+		public UInt16 endAddress;
 		
 		public bool followPC = true;
 
@@ -137,14 +147,14 @@ namespace SixtyFive
 			pbMem.Focus();
 		}
 	
-		public void SetCurrentAddress(ushort ad) 
+		public void SetCurrentAddress(UInt16 ad) 
 		{
 			vsAddress.Value = ad;
 		}
 
 		private void vsAddress_ValueChanged(object sender, System.EventArgs e)
 		{
-			startAddress = (ushort)(vsAddress.Value);
+			startAddress = (UInt16)(vsAddress.Value);
 			update();
 		}
 
@@ -182,12 +192,12 @@ namespace SixtyFive
 			int y,lines;
 			string s;
 			SizeF size;
-			ushort addr;
+			UInt16 addr;
 
 			// Clear bitmap
 			g.Clear(Color.LightGray);
 
-			// Determine the size of a byte
+			// Determine the size of a Byte
 			size = g.MeasureString("0",NormalFont);
 		
 			// Determine the number of lines that will fit in the box

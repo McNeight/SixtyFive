@@ -4,6 +4,7 @@
  * Generic memory device.
  *
  * Copyright (c) 2004 Dan Boris
+ * Copyright © 2018 Neil McNeight
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,45 +17,84 @@ using System;
 
 namespace SixtyFive
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    public class Memory : IDevice
+    {
+        private Byte[] mem;
+        private int memsize;
 
-	public class Memory : IDevice
-	{
-		private byte[] mem; 
-		private int memsize;
-		public bool isROM;
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool isROM;
 
-		public Memory(int size)
-		{	
-			memsize = size;
-			mem = new byte[size];
-			isROM = false;
-		}
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="size"></param>
+        public Memory(int size)
+        {
+            memsize = size;
+            mem = new Byte[size];
+            isROM = false;
+        }
 
-		public void Reset() { 
-			for (int i=0; i<memsize; i++) mem[i] = 0;
-		}
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Reset()
+        {
+            for (int i = 0; i < memsize; i++)
+                mem[i] = 0;
+        }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Memory";
+        }
 
-		public override string ToString() 
-		{
-			return "Memory";
-		}
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="addr"></param>
+        /// <param name="data"></param>
+        public void DebugWrite(UInt16 addr, Byte data)
+        {
+            mem[addr] = data;
+        }
 
-		public void DebugWrite(ushort addr, byte data)		{			mem[addr] = data;		}		public byte DebugRead(ushort addr)
-		{
-			return mem[addr];
-		}
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="addr"></param>
+        /// <returns></returns>
+        public Byte DebugRead(UInt16 addr)
+        {
+            return mem[addr];
+        }
 
-		public byte this[ushort addr] 
-		{
-			get 
-			{
-				return mem[addr];
-			}
-			set 
-			{
-				if (!isROM) mem[addr] = value;
-			}
-		}
-	}
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="addr"></param>
+        /// <returns></returns>
+        public Byte this[UInt16 addr]
+        {
+            get
+            {
+                return mem[addr];
+            }
+            set
+            {
+                if (!isROM)
+                    mem[addr] = value;
+            }
+        }
+    }
 }

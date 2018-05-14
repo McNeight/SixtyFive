@@ -17,13 +17,13 @@ using System;
 
 namespace SixtyFive
 {
-   /// <summary>
-   /// 
-   /// </summary>
-   public class AddressRange
-   {
-      public UInt16 startAddress;
-      public UInt16 endAddress;
-      public IDevice device;
-   }
+    /// <summary>
+    /// 
+    /// </summary>
+    public class AddressRange
+    {
+        public UInt16 startAddress;
+        public UInt16 endAddress;
+        public IDevice device;
+    }
 }

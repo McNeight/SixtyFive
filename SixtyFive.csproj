@@ -161,14 +161,26 @@
     <Compile Include="Viewers\CPUViewer.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Viewers\CPUViewer.Designer.cs">
+      <DependentUpon>CPUViewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Viewers\DisasmViewer.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Viewers\HexViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Viewers\HexViewer.Designer.cs">
+      <DependentUpon>HexViewer.cs</DependentUpon>
     </Compile>
     <Compile Include="Viewers\LineAsm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Viewers\MemViewer.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Viewers\MemViewer.Designer.cs">
+      <DependentUpon>MemViewer.cs</DependentUpon>
     </Compile>
     <Content Include="App.ico" />
     <Content Include="Documentation\machine.xml" />
@@ -191,6 +203,9 @@
     <EmbeddedResource Include="Viewers\DisasmViewer.resx">
       <DependentUpon>DisasmViewer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Viewers\HexViewer.resx">
+      <DependentUpon>HexViewer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Viewers\LineAsm.resx">
       <DependentUpon>LineAsm.cs</DependentUpon>
     </EmbeddedResource>
@@ -210,6 +225,16 @@
     <None Include="Documentation\machine.DTD" />
     <None Include="Documentation\sim6502.chm" />
     <None Include="Documentation\SixtyFive.dgml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Be.HexEditor\Be.Byte\Be.Byte.csproj">
+      <Project>{d64fb126-5f80-47aa-ab83-ed9298884368}</Project>
+      <Name>Be.Byte</Name>
+    </ProjectReference>
+    <ProjectReference Include="Be.HexEditor\Be.Windows.Forms.HexBox\Be.Windows.Forms.HexBox.csproj">
+      <Project>{26C5F25F-B450-4CAF-AD8B-B8D11AE73457}</Project>
+      <Name>Be.Windows.Forms.HexBox</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

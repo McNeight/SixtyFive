@@ -1,5 +1,5 @@
 /*
- * trace.cs
+ * Trace.cs
  *
  * SixtyFive trace log writer
  * 
@@ -19,38 +19,39 @@ using System.IO;
 
 namespace SixtyFive
 {
-   public class Trace
-   {
-      public bool traceon;    //true = trace is on
-      public string filename;    //Trace file name
+    public class Trace
+    {
+        public bool traceon;    //true = trace is on
+        public string filename;    //Trace file name
 
-      StreamWriter sw;        //Stream write for trace file
+        StreamWriter sw;        //Stream write for trace file
 
-      public Trace()
-      {
-         traceon = false;
-         filename = "trace.txt";
-      }
+        public Trace()
+        {
+            traceon = false;
+            filename = "trace.txt";
+        }
 
-      // Start tracing
-      public void start()
-      {
-         traceon = true;
-         sw = new StreamWriter(filename);
-      }
+        // Start tracing
+        public void Start()
+        {
+            traceon = true;
+            sw = new StreamWriter(filename);
+        }
 
-      // Stop tracing
-      public void stop()
-      {
-         traceon = false;
-         sw.Close();
-         sw = null;
-      }
+        // Stop tracing
+        public void Stop()
+        {
+            traceon = false;
+            sw.Close();
+            sw = null;
+        }
 
-      // Write line to tracelog
-      public void write(string s)
-      {
-         if (sw != null) sw.WriteLine("{0}", s);
-      }
-   }
+        // Write line to tracelog
+        public void Write(string s)
+        {
+            if (sw != null)
+                sw.WriteLine("{0}", s);
+        }
+    }
 }
