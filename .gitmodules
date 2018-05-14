@@ -1,0 +1,3 @@
+[submodule "Be.HexEditor"]
+	path = Be.HexEditor
+	url = https://github.com/McNeight/Be.HexEditor.git
