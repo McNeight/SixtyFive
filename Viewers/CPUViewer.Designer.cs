@@ -1,4 +1,4 @@
-﻿namespace SixtyFive
+﻿namespace SixtyFive.Viewers
 {
     partial class CPUViewer
     {

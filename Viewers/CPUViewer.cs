@@ -1,10 +1,10 @@
 /*
  * CPUView.cs
  *
- * Sim6502 CPU Register Viewer
+ * SixtyFive CPU Register Viewer
  * 
  * Copyright (c) 2004 Dan Boris
- *
+ * Copyright © 2018 Neil McNeight
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -15,15 +15,11 @@
 
 using System;
 using System.Drawing;
-using System.Collections;
-using System.ComponentModel;
 using System.Windows.Forms;
-using System.Text;
 
-namespace SixtyFive
+namespace SixtyFive.Viewers
 {
-
-	public partial class CPUViewer : System.Windows.Forms.Form
+    public partial class CPUViewer : System.Windows.Forms.Form
 	{
 		public M6502 CPU;
 

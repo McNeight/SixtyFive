@@ -110,8 +110,20 @@
     <Compile Include="frmAbout.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmAbout.Designer.cs">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBreak.Designer.cs">
+      <DependentUpon>frmBreak.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRangeInput.Designer.cs">
+      <DependentUpon>frmRangeInput.cs</DependentUpon>
+    </Compile>
     <Compile Include="IO\Assembler.cs">
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -167,6 +179,9 @@
     <Compile Include="Viewers\DisasmViewer.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Viewers\DisasmViewer.Designer.cs">
+      <DependentUpon>DisasmViewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Viewers\HexViewer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +190,9 @@
     </Compile>
     <Compile Include="Viewers\LineAsm.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Viewers\LineAsm.Designer.cs">
+      <DependentUpon>LineAsm.cs</DependentUpon>
     </Compile>
     <Compile Include="Viewers\MemViewer.cs">
       <SubType>Form</SubType>

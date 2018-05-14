@@ -1,6 +1,12 @@
-﻿namespace SixtyFive.Viewers
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SixtyFive.Viewers
 {
-    partial class MemViewer
+    partial class DisasmViewer
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +36,6 @@
         {
             this.pbMem = new System.Windows.Forms.PictureBox();
             this.vsAddress = new System.Windows.Forms.VScrollBar();
-            this.txtInput = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbMem)).BeginInit();
             this.SuspendLayout();
             // 
@@ -40,60 +45,43 @@
                | System.Windows.Forms.AnchorStyles.Left)));
             this.pbMem.Location = new System.Drawing.Point(0, 0);
             this.pbMem.Name = "pbMem";
-            this.pbMem.Size = new System.Drawing.Size(400, 400);
+            this.pbMem.Size = new System.Drawing.Size(376, 400);
             this.pbMem.TabIndex = 0;
             this.pbMem.TabStop = false;
             this.pbMem.Paint += new System.Windows.Forms.PaintEventHandler(this.pbMem_Paint);
-            this.pbMem.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pbMem_MouseDown);
             // 
             // vsAddress
             // 
             this.vsAddress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                | System.Windows.Forms.AnchorStyles.Left)));
             this.vsAddress.LargeChange = 16;
-            this.vsAddress.Location = new System.Drawing.Point(400, 0);
-            this.vsAddress.Maximum = 4096;
+            this.vsAddress.Location = new System.Drawing.Point(376, 0);
+            this.vsAddress.Maximum = 65535;
             this.vsAddress.Name = "vsAddress";
             this.vsAddress.Size = new System.Drawing.Size(16, 400);
             this.vsAddress.TabIndex = 1;
             this.vsAddress.ValueChanged += new System.EventHandler(this.vsAddress_ValueChanged);
             // 
-            // txtInput
+            // DisasmViewer
             // 
-            this.txtInput.BackColor = System.Drawing.Color.Yellow;
-            this.txtInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtInput.Font = new System.Drawing.Font("Courier New", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtInput.Location = new System.Drawing.Point(312, 368);
-            this.txtInput.MaxLength = 2;
-            this.txtInput.Name = "txtInput";
-            this.txtInput.Size = new System.Drawing.Size(16, 16);
-            this.txtInput.TabIndex = 2;
-            this.txtInput.Visible = false;
-            this.txtInput.Leave += new System.EventHandler(this.txtInput_Leave);
-            // 
-            // MemViewer
-            // 
-            this.AutoScaleBaseSize = new System.Drawing.Size(8, 15);
-            this.ClientSize = new System.Drawing.Size(416, 398);
-            this.Controls.Add(this.txtInput);
+            this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
+            this.ClientSize = new System.Drawing.Size(392, 398);
             this.Controls.Add(this.vsAddress);
             this.Controls.Add(this.pbMem);
-            this.Font = new System.Drawing.Font("Courier New", 9.75F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "MemViewer";
-            this.Text = "Memory Viewer";
-            this.Closing += new System.ComponentModel.CancelEventHandler(this.MemViewer_Closing);
-            this.Load += new System.EventHandler(this.MemViewer_Load);
-            this.Resize += new System.EventHandler(this.MemViewer_Resize);
+            this.Name = "DisasmViewer";
+            this.Text = "Disassembly Viewer";
+            this.Closing += new System.ComponentModel.CancelEventHandler(this.DisasmViewer_Closing);
+            this.Load += new System.EventHandler(this.DisasmViewer_Load);
+            this.Resize += new System.EventHandler(this.DisasmViewer_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.pbMem)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
+
         }
 
         #endregion
 
         private System.Windows.Forms.PictureBox pbMem;
-        private System.Windows.Forms.TextBox txtInput;
         private System.Windows.Forms.VScrollBar vsAddress;
 
     }

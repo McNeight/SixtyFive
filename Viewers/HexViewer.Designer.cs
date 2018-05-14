@@ -1,4 +1,4 @@
-﻿namespace SixtyFive
+﻿namespace SixtyFive.Viewers
 {
     partial class HexViewer
     {
@@ -33,7 +33,7 @@
             // 
             // hexBox1
             // 
-            this.hexBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.hexBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)));
             this.hexBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.hexBox1.Location = new System.Drawing.Point(0, 0);

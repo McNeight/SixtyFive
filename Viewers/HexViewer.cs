@@ -13,18 +13,11 @@
  */
 
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Be.Byte;
-using Be.Windows.Forms;
 
-namespace SixtyFive
+using Be.Byte;
+
+namespace SixtyFive.Viewers
 {
     public partial class HexViewer : Form
     {
